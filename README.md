@@ -1,7 +1,6 @@
+# Project Name
 
-# CanOfBooks
-
-**Author**: Andrew Vreeland, Malik Sadiki-Torres
+**Author**: Malik Sadiki-Torres Andrew Vreeland
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
@@ -23,18 +22,41 @@
 
 ## Credit and Collaborations
 
+### Logistical
+
+What hours will you be available to communicate?
+
+12 PM est to 12 AM est
 
 
+What platform will you use to communicate (ie. Slack, phone …)?
 
-# Start your own "Can of Books" App
+Slack
 
-This repository has starter code to begin work on creating your own online bookshelf.
+How often will you take breaks?
 
-## What can books do?
+As needed
 
-Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
+What is your plan if you start to fall behind?
 
-## Use this template
+Utilize TA's
 
-Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
+### Cooperative
 
+Make a list of each parson's strengths.
+
+Andrew: Puncutality
+Malik: Communication
+
+
+How can you best utilize these strengths in the development of your application?
+
+We'll ensure that we're coordinating our work times throughout the lab.
+
+In what areas do you each want to develop greater strength?
+
+Our programming skills and knowledge.
+
+Knowing that every person in your team needs to understand the code, how do you plan to approach the day-to-day development? 
+
+We'll communicate throughout each task and apply the driver navigator workflow. 
