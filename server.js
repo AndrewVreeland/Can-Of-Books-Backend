@@ -16,7 +16,7 @@ app.listen(PORT, () => console.log(`listening on ${PORT}`));
 
 // *** CONNECT MONGODB USING MONGOOSE ***
 // *** PER THE MONGGOOSE DOCS - PLUG AND PLAY CODE 
-
+app.use(express.json());
 mongoose.connect(process.env.DB_URL);
 
 const db = mongoose.connection;
@@ -27,8 +27,18 @@ db.once('open', function (){
 
 // ENDPOINTS
 app.get('/books', getBook);
-
 app.delete('/books/:bookID', deleteBook);
+app.post('/books', postBook);
+
+async function postBook(request,response,next){
+try{
+let createdBook = await Book.create(request.body)
+
+response.status(201).send('test from post')
+}catch(error){
+  next(error)
+}
+}
 
 async function deleteBook(request,response,next) {
   try {
