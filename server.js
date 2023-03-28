@@ -4,10 +4,10 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const getBook = require('./modules/books.js')
 
 const app = express();
 app.use(cors());
-
 const PORT = process.env.PORT || 3002;
 
 
@@ -26,10 +26,13 @@ db.once('open', function (){
 })
 
 // ENDPOINTS
+app.get('/books', getBook);
 
-app.get('/test', (request, response) => {
 
-  response.send('test request received')
 
-})
-
+app.get('*', (request, response) => {
+  response.status(404).send('This route does not exist');
+});
+app.use((error, request, response, next) => {
+  response.status(500).send(error.message);
+});
