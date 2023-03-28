@@ -5,7 +5,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const getBook = require('./modules/books.js')
-
+const Book  = require('./models/book.js')
 const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 3002;
@@ -27,6 +27,24 @@ db.once('open', function (){
 
 // ENDPOINTS
 app.get('/books', getBook);
+
+app.delete('/books/:bookID', deleteBook);
+
+async function deleteBook(request,response,next) {
+  try {
+    let id = request.params.bookID;
+
+    await Book.findByIdAndDelete(id); 
+
+    response.status(200).send('Book Deleted');
+
+  } catch (error) {
+
+    next(error);
+
+  }
+}
+
 
 
 
