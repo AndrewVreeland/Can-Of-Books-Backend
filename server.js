@@ -29,7 +29,24 @@ db.once('open', function (){
 app.get('/books', getBook);
 app.delete('/books/:bookID', deleteBook);
 app.post('/books', postBook);
+app.put('/books/:bookID',updateBook );
 
+
+async function updateBook(request,response,next) {
+  try {
+    let id = request.params.bookID;
+
+    let data = request.body; 
+
+    const updatedBook = await Book.findByIdAndUpdate(id,data,{new: true, overwrite: true});
+
+    response.status(200).send(updatedBook);
+  
+  } catch(error) {
+    next(error);
+
+  }
+}
 async function postBook(request,response,next){
 try{
 let createdBook = await Book.create(request.body)
